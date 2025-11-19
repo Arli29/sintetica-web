@@ -1,0 +1,597 @@
+:root {
+    --brand: #ff8a00;
+    --brand2: #ff8a00;
+    --bg: #f5f6f8;
+    --ink: #222;
+    --muted: #6b7280;
+    --card: #fff;
+    --radius: 18px;
+    --shadow: 0 14px 30px rgba(0,0,0,.08);
+    --success: #10b981;
+    --error: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Varela Round', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+.wrap {
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 26px;
+    color: #111;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--brand);
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #23262d;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 12px;
+}
+
+.main-nav a:hover {
+    background: #f3f4f6;
+}
+
+/* Información del Escenario */
+.escenario-info {
+    margin: 30px 0;
+}
+
+.escenario-header {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.escenario-imagen {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.escenario-details h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--ink);
+}
+
+.escenario-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.escenario-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.price {
+    color: var(--brand);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.escenario-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.feature {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid #e9ecef;
+}
+
+/* Proceso de Reserva */
+.reserva-process {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 40px;
+}
+
+.step {
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: #f8f9fa;
+    color: var(--muted);
+    font-weight: bold;
+    position: relative;
+}
+
+.step.active {
+    background: var(--brand);
+    color: white;
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: #e9ecef;
+}
+
+.reserva-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Grid de Selección */
+.selection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Calendario */
+.calendar-section h2,
+.time-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--ink);
+}
+
+.calendar-container {
+    background: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--muted);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+    background: #e9ecef;
+}
+
+.current-month {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+.calendar {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    border: 2px solid transparent;
+    background: white;
+}
+
+.day:hover:not(.disabled):not(.empty) {
+    background: #f8f9fa;
+    border-color: var(--brand);
+}
+
+.day.selected {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+    transform: scale(1.1);
+}
+
+.day.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    background: #f8f9fa;
+}
+
+.day.today {
+    border-color: var(--brand);
+    background: #fffaf0;
+    font-weight: bold;
+}
+
+.day.empty {
+    background: transparent;
+    cursor: default;
+    border: none;
+}
+
+/* Horarios AM/PM */
+.time-periods {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.time-period h3 {
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 16px;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.time-slot {
+    padding: 10px 6px;
+    border: 2px solid #e9ecef;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: center;
+}
+
+.time-slot:hover:not(.disabled) {
+    border-color: var(--brand);
+    transform: translateY(-1px);
+}
+
+.time-slot.selected {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+    transform: scale(1.05);
+}
+
+.time-slot.disabled {
+    background: #f8f9fa;
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #e9ecef;
+    text-decoration: line-through;
+}
+
+/* Selección de Duración */
+.duracion-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+.duracion-section h3 {
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.duracion-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.duracion-btn {
+    padding: 12px 8px;
+    border: 2px solid #e9ecef;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+}
+
+.duracion-btn:hover {
+    border-color: var(--brand);
+}
+
+.duracion-btn.selected {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+}
+
+/* Resumen */
+.reserva-summary {
+    background: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 25px;
+    position: sticky;
+    top: 100px;
+}
+
+.reserva-summary h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--ink);
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 14px;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item.total {
+    font-weight: bold;
+    font-size: 16px;
+    border-top: 2px solid #dee2e6;
+    margin-top: 8px;
+    padding-top: 12px;
+}
+
+.discount-amount {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.total-amount {
+    color: var(--brand);
+    font-size: 18px;
+}
+
+/* Cupón */
+.cupon-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cupon-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.cupon-input:focus {
+    outline: none;
+    border-color: var(--brand);
+}
+
+.btn-cupon {
+    padding: 12px 16px;
+    background: var(--muted);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.btn-cupon:hover {
+    background: #5a6268;
+}
+
+.btn-continuar {
+    width: 100%;
+    padding: 16px;
+    background: #ccc;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-continuar.enabled {
+    background: var(--brand);
+    cursor: pointer;
+}
+
+.btn-continuar.enabled:hover {
+    background: #e67a00;
+    transform: translateY(-2px);
+}
+
+.btn-continuar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Responsive */
+@media (max-width: 968px) {
+    .reserva-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .selection-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .reserva-summary {
+        position: static;
+        margin-top: 30px;
+    }
+    
+    .time-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .duracion-options {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .time-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .duracion-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .calendar-days {
+        gap: 4px;
+    }
+    
+    .day {
+        font-size: 12px;
+    }
+    
+    .time-slot {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+    
+    .process-steps {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .step:not(:last-child)::after {
+        display: none;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .week-days div {
+        font-size: 12px;
+    }
+    
+    .day {
+        font-size: 11px;
+    }
+    
+    .escenario-header {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .escenario-imagen {
+        height: 200px;
+    }
+}

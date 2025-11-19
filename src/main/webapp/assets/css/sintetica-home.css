@@ -1,0 +1,317 @@
+:root{
+  --brand:#ff8a00; --brand2:#ff8a00;
+  --bg:#f5f6f8; --ink:#222; --muted:#6b7280;
+  --card:#fff; --radius:18px; --shadow:0 14px 30px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+body{margin:0; font-family:'Varela Round',system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg)}
+.wrap{width:min(1200px,92%); margin-inline:auto}
+
+/* Header */
+.site-header{position:sticky; top:0; z-index:1000; background:#fff; border-bottom:1px solid #eee}
+.site-header .wrap{display:flex; align-items:center; gap:20px; padding:14px 0}
+.logo{font-weight:900; font-size:26px; color:#111; text-decoration:none}
+.logo span{color:var(--brand)}
+.main-nav{display:flex; gap:10px}
+.main-nav a{color:#23262d; text-decoration:none; padding:10px 12px; border-radius:12px}
+.main-nav a:hover{background:#f3f4f6}
+.actions{margin-left:auto; display:flex; gap:12px; align-items:center}
+.actions .ghost{color:#374151; text-decoration:none}
+.actions .btn{background:var(--brand2); color:#fff; padding:10px 14px; border-radius:12px; text-decoration:none}
+
+/* Avatar & menu */
+.avatar-btn{border:0;background:#fff;border-radius:999px;padding:2px;cursor:pointer; position:relative; z-index:1002;}
+.avatar-btn img{width:36px;height:36px;border-radius:50%;display:block}
+.user-menu{position:fixed; top:70px; right:24px; min-width:250px; background:#fff; border:1px solid #eee; border-radius:14px; box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; z-index:9999;}
+.user-menu[hidden]{display:none}
+.user-menu a{display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none}
+.user-menu a:hover{background:#f6f7f9}
+.user-menu .sep{height:1px; background:#eee; margin:6px 4px}
+
+/* Hero */
+.hero{padding:28px 0 10px}
+.hero-grid{display:grid; grid-template-columns:1.2fr .9fr; gap:28px}
+.hero-copy h1{font-size:46px; line-height:1.12; margin:8px 0 8px}
+.lead{color:var(--muted); margin:0 0 12px}
+.search{display:flex; gap:10px; background:#fff; padding:10px; border-radius:999px; box-shadow:var(--shadow); border:1px solid #ececec}
+.search input{flex:1; border:0; font-size:16px; padding:12px 14px; outline:none}
+.search-btn{border:0; padding:12px 18px; border-radius:999px; background:var(--brand); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center;}
+.search-btn i{font-size:18px;}
+.chips{display:flex; gap:8px; padding:0; margin:14px 0 0; list-style:none; flex-wrap:wrap}
+.chips button{border:1px solid #e7e7e7; background:#fff; border-radius:999px; padding:8px 12px; cursor:pointer}
+.coupon-chip{margin-top:10px; display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px dashed #ffb266; color:#b44700; padding:8px 12px; border-radius:999px}
+
+.hero-card{display:grid; align-content:start; gap:12px}
+.map-skel{height:300px; background:linear-gradient(180deg,#eaf2ff,#e1ecff); border-radius:var(--radius); display:grid; place-items:center; color:#5a7bd6; box-shadow:var(--shadow)}
+.promo-badge{justify-self:start; display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:#fff; border:1px solid #ffe6cc; color:#b44700; padding:8px 12px; border-radius:999px; box-shadow:var(--shadow); z-index:2;}
+.promo-badge .dot{width:8px; height:8px; border-radius:999px; background:var(--brand)}
+
+/* Cards */
+.nearby{padding:8px 0 26px}
+.sec-head{display:flex; align-items:center; justify-content:space-between}
+h2{font-size:24px; margin:6px 0 10px}
+.viewall{color:#ff8a00; text-decoration:none}
+.cards{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.card{background:var(--card); border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
+.card img{width:100%; height:180px; object-fit:cover; display:block}
+.card .txt{padding:12px 14px}
+.card h3{margin:2px 0 4px; font-size:18px}
+.card p{margin:0; color:#6b7280; font-size:13px}
+.meta{margin-top:8px; display:flex; justify-content:space-between; font-size:13px; color:#374151}
+.tag{background:#eef2ff; color:#ff8a00; padding:2px 8px; border-radius:999px}
+.book{display:inline-block; margin-top:10px; background:var(--brand2); color:#fff; text-decoration:none; padding:10px 12px; border-radius:10px}
+
+/* Steps */
+.how{padding:8px 0 34px}
+.steps{display:flex; gap:10px; list-style:decimal; background:#fff; border:1px solid #eee; border-radius:16px; padding:14px; margin:8px 0 0}
+.steps li{flex:1}
+
+/* Footer */
+.site-footer{background:#fff; border-top:1px solid #eee}
+.site-footer .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
+.site-footer a{color:#4b5563; text-decoration:none}
+.map { height: 300px; border-radius: var(--radius); box-shadow: var(--shadow); z-index:1;}
+
+/* TESTIMONIOS */
+.testimonials {
+  padding: 40px 0;
+  background: #fafafa;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #f0f0f0;
+}
+
+.testimonial-header {
+  margin-bottom: 16px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.stars {
+  color: #ff8a00;
+  font-size: 14px;
+}
+
+.testimonial-card p {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* PREGUNTAS FRECUENTES */
+.faq {
+  padding: 40px 0;
+  background: var(--bg);
+}
+
+.faq-grid {
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.faq-item {
+  background: var(--card);
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #eee;
+}
+
+.faq-item summary {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  color: var(--ink);
+  transition: background-color 0.2s;
+}
+
+.faq-item summary:hover {
+  background: #f8f9fa;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--brand);
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  content: '-';
+}
+
+.faq-content {
+  padding: 0 20px 20px;
+}
+
+.faq-content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Marcadores del mapa */
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  background: #ff8a00;
+  border: 2px solid white;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-icon {
+  transform: rotate(45deg);
+  color: white;
+  font-size: 14px;
+}
+
+/* Controles del mapa */
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 2;
+}
+
+.leaflet-popup {
+  z-index: 500;
+}
+
+.user-menu a i {
+    margin-right: 8px;  /* Espacio entre el icono y el texto */
+    font-size: 18px;    /* Ajustar el tamaño del icono */
+}
+
+/* Estados de interacción mejorados */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Aplicar a otros botones también */
+.btn-pagar, .btn-continuar, .btn-cupon {
+  transition: all 0.3s ease;
+}
+
+.btn-pagar:hover, .btn-continuar:hover, .btn-cupon:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr; gap:18px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width: 768px) {
+  .testimonial-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .faq-item summary {
+    padding: 16px;
+    padding-right: 40px;
+  }
+  
+  .faq-content {
+    padding: 0 16px 16px;
+  }
+}
+
+@media (max-width: 720px){
+  .main-nav{display:none}
+  .actions .ghost,.actions .btn{display:none}
+  .cards{grid-auto-flow:column; grid-auto-columns:80%; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:6px}
+  .card{scroll-snap-align:start}
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 30px 0;
+  }
+  
+  .faq {
+    padding: 30px 0;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .hero-copy h1 {
+    font-size: 36px;
+  }
+}
